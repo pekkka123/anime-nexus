@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anime Nexus</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:
+    radial-gradient(circle at top, rgba(156,39,176,0.18), transparent 35%),
+    radial-gradient(circle at bottom, rgba(0,188,212,0.15), transparent 35%),
+    #0d0d1a;
+    color:white;
+    min-height:100vh;
+}
+
+header{
+    text-align:center;
+    padding:80px 20px;
+    background:
+    linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(13,13,26,0.95)),
+    url('https://images.unsplash.com/photo-1511884642898-4c92249e20b6?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+}
+
+header h1{
+    font-size:4rem;
+    color:#c77dff;
+    text-transform:uppercase;
+    text-shadow:0 0 15px rgba(199,125,255,0.7);
+}
+
+header p{
+    color:#d6d6ff;
+    margin-top:10px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 20px;
+    text-align:center;
+}
+
+.container h2{
+    font-size:2.5rem;
+    margin-bottom:40px;
+    color:#7df9ff;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:25px;
+}
+
+.card{
+    padding:40px 20px;
+    border-radius:15px;
+    font-size:1.2rem;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    text-decoration:none;
+    color:white;
+    display:block;
+    box-shadow:0 0 15px rgba(0,0,0,0.4);
+}
+
+.card:hover{
+    transform:translateY(-8px) scale(1.03);
+}
+
+/* SAKAMOTO */
+.sakamoto{
+    background:linear-gradient(135deg,#00b894,#00cec9);
+}
+
+/* JUJUTSU */
+.jjk{
+    background:linear-gradient(135deg,#7b2ff7,#00c6ff);
+}
+
+/* FIRE FORCE */
+.fire{
+    background:linear-gradient(135deg,#ff0080,#7928ca);
+}
+
+.logout{
+    position:fixed;
+    top:10px;
+    right:10px;
+    padding:10px 15px;
+    background:linear-gradient(135deg,#00c6ff,#7b2ff7);
+    border:none;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.logout:hover{
+    opacity:0.85;
+}
+</style>
+</head>
+
+<body>
+
+<script>
+if(!localStorage.getItem("loggedIn")){
+    window.location.href = "Auth.html";
+}
+</script>
+
+<button class="logout" onclick="logout()">Logout</button>
+
+<header>
+    <h1>Anime Nexus</h1>
+    <p>Your Ultimate Anime Hub</p>
+</header>
+
+<main class="container">
+
+    <h2>Anime Categories</h2>
+
+    <div class="grid">
+
+        <a href="Sakamoto.html" class="card sakamoto">
+            Sakamoto Days
+        </a>
+
+        <a href="Jujutsu.html" class="card jjk">
+            Jujutsu Kaisen
+        </a>
+
+        <a href="Fireforce.html" class="card fire">
+            Fire Force
+        </a>
+
+    </div>
+
+</main>
+
+<script>
+function logout(){
+    localStorage.removeItem("loggedIn");
+    window.location.href = "Auth.html";
+}
+</script>
+
+</body>
+</html>

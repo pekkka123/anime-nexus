@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anime Nexus - Login</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url("https://images.unsplash.com/photo-1541562232579-512a21360020?q=80&w=1600&auto=format&fit=crop");
+
+    background-size:cover;
+    background-position:center;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+.welcome{
+    text-align:center;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    padding:40px;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    width:350px;
+}
+
+.welcome h1{
+    color:#ff4b3e;
+    margin-bottom:10px;
+}
+
+.welcome p{
+    color:#ddd;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.welcome button{
+    padding:10px 20px;
+    border:none;
+    background:#ff4b3e;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.welcome button:hover{
+    background:#ff2f1f;
+}
+
+.box{
+    width:320px;
+    padding:30px;
+    border-radius:15px;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+
+    text-align:center;
+    color:white;
+
+    display:none;
+}
+
+h2{
+    margin-bottom:15px;
+    color:#ff4b3e;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:none;
+    border-radius:8px;
+    outline:none;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:#ff4b3e;
+    border:none;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#ff2f1f;
+}
+
+.toggle{
+    margin-top:12px;
+    font-size:13px;
+    color:#ddd;
+    cursor:pointer;
+}
+
+#msg{
+    margin-top:10px;
+    font-size:14px;
+    color:lightgreen;
+}
+
+.backBtn{
+    margin-top:10px;
+    width:100%;
+    padding:10px;
+    background:#444;
+    border:none;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.backBtn:hover{
+    background:#666;
+}
+</style>
+</head>
+
+<body>
+
+<div class="welcome" id="welcomeBox">
+    <h1>Welcome to Anime Nexus</h1>
+    <p>Discover Anime Characters</p>
+    <button onclick="enterSite()">Enter Site</button>
+</div>
+
+<div class="box" id="loginBox">
+
+    <h2 id="title">Login</h2>
+
+    <input type="text" id="user" placeholder="Username">
+    <input type="password" id="pass" placeholder="Password">
+
+    <button id="mainBtn" onclick="auth()">Login</button>
+
+    <button class="backBtn" onclick="goBack()">Back</button>
+
+    <div class="toggle" onclick="switchMode()">
+        No account? Register here
+    </div>
+
+    <div id="msg"></div>
+
+</div>
+
+<script src="auth.js"></script>
+
+<script>
+function enterSite(){
+    document.getElementById("welcomeBox").style.display = "none";
+    document.getElementById("loginBox").style.display = "block";
+}
+
+function goBack(){
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("welcomeBox").style.display = "block";
+}
+</script>
+
+</body>
+</html>

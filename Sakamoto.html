@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sakamoto Days</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    body{
+        font-family:Arial, sans-serif;
+        background:#1f1f1f;
+        color:#f1f1f1;
+        line-height:1.6;
+        padding: 20px;
+    }
+
+   
+    .title{
+        text-align:center;
+        font-size:3rem;
+        color:#e5a100;
+        margin-bottom:10px;
+    }
+
+    .series-info{
+        max-width:900px;
+        margin: 0 auto 30px auto;
+        text-align:center;
+        color:#ccc;
+    }
+
+    .character-list-title{
+        text-align:center;
+        margin:20px 0;
+        color:#e5a100;
+    }
+
+    
+    .character-list{
+        max-width:1100px;
+        margin:auto;
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap:20px;
+    }
+
+    
+    .character-card{
+        background:#2a2a2a;
+        border-radius:12px;
+        overflow:hidden;
+        box-shadow:0 4px 10px rgba(0,0,0,0.4);
+        transition:transform 0.3s ease;
+    }
+
+    .character-card:hover{
+        transform:translateY(-5px);
+    }
+
+    .character-card img{
+        width:100%;
+        height:250px;
+        object-fit:cover;
+    }
+
+    .character-card h3{
+        color:#e5a100;
+        margin:10px;
+    }
+
+    .character-card p{
+        margin:10px;
+        font-size:0.9rem;
+        color:#ddd;
+        text-align:justify;
+    }
+
+    @media (max-width: 768px){
+        .title{
+            font-size:2rem;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<h1 class="title">Sakamoto Days</h1>
+
+<p class="series-info">
+  Taro Sakamoto is the main protagonist of the series Sakamoto Days.
+  Previously the best assassin in the world and a former member of the Order,
+  he now runs a convenience store with his wife Aoi and daughter Hana.
+</p>
+
+<h2 class="character-list-title">Character List</h2>
+
+<div class="character-list">
+
+  <div class="character-card">
+    <img src="https://images6.alphacoders.com/138/1388238.png" alt="Taro Sakamoto">
+    <h3>Taro Sakamoto</h3>
+    <p>Legendary ex-hitman who now lives peacefully running a convenience store with his family.</p>
+  </div>
+
+  <div class="character-card">
+    <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2025/01/lu-shaotang-sakamoto-days.jpg" alt="Lu Xiaotong">
+    <h3>Lu Xiaotong</h3>
+    <p>Daughter of a Triad family who now works at Sakamoto’s store and helps the team.</p>
+  </div>
+
+  <div class="character-card">
+    <img src="https://i.pinimg.com/originals/e4/fb/bf/e4fbbf197bb186850ee74614c5d79905.jpg" alt="Shin Asakura">
+    <h3>Shin Asakura</h3>
+    <p>Telepathic former hitman who now supports Sakamoto’s family in their daily life.</p>
+  </div>
+
+  <div class="character-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Ux25iGELDJEYeFfKp3fT-caFG9cRGJrT7Q&s" alt="Aoi Sakamoto">
+    <h3>Aoi Sakamoto</h3>
+    <p>Sakamoto’s wife whose kindness helped him leave the assassin world behind.</p>
+  </div>
+
+  <div class="character-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAsouS7YxzgZiACTuWpCK1dKJMreUcI69QyA&s" alt="Hana Sakamoto">
+    <h3>Hana Sakamoto</h3>
+    <p>Their daughter who brings joy and warmth into the Sakamoto family’s life.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
