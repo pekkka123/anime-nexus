@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <title>Jujutsu Kaisen</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -14,61 +16,79 @@
 
 body{
     font-family:Arial, sans-serif;
-    background:#1f1f1f;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)),
+    url("https://wallpapercave.com/wp/wp11806298.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
     color:#f1f1f1;
     line-height:1.6;
     padding:20px;
 }
 
-
+/* TITLE */
 .title{
     text-align:center;
     font-size:3rem;
-    color:#e5a100;
+    color:#9d7bff;
     margin-bottom:10px;
+
+    text-shadow:
+    0 0 10px rgba(157,123,255,0.7),
+    0 0 20px rgba(100,100,255,0.4);
 }
 
+/* SERIES INFO */
 .series-info{
     max-width:900px;
-    margin:0 auto 30px auto;
+    margin:0 auto 35px auto;
     text-align:center;
-    color:#ccc;
+    color:#ddd;
+    font-size:1rem;
 }
 
+/* SECTION TITLE */
 .character-list-title{
     text-align:center;
-    color:#e5a100;
-    margin:20px 0;
+    color:#9d7bff;
+    margin:30px 0;
+    font-size:2rem;
+
+    text-shadow:0 0 10px rgba(157,123,255,0.5);
 }
 
-
+/* CHARACTER GRID */
 .character-list{
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
+
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:25px;
 }
-
-
-<style>
 
 /* CHARACTER CARD */
 .character-card{
-    background:#2a2a2a;
-    border-radius:16px;
+    background:rgba(42,42,42,0.92);
+
+    border-radius:18px;
     overflow:hidden;
 
-    /* IMPROVED SHADOW */
     box-shadow:
-    0 6px 15px rgba(0,0,0,0.4),
-    0 0 10px rgba(229,161,0,0.1);
+    0 6px 15px rgba(0,0,0,0.5),
+    0 0 10px rgba(157,123,255,0.15);
 
     transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 
     position:relative;
+
+    backdrop-filter:blur(5px);
 }
 
 /* HOVER EFFECT */
@@ -76,64 +96,25 @@ body{
     transform:translateY(-10px) scale(1.02);
 
     box-shadow:
-    0 12px 25px rgba(0,0,0,0.6),
-    0 0 20px rgba(229,161,0,0.5);
+    0 12px 30px rgba(0,0,0,0.7),
+    0 0 20px rgba(157,123,255,0.5);
 
     cursor:pointer;
 }
 
-
-.character-image{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-
-    transition:
-    transform 0.4s ease,
-    filter 0.4s ease;
-}
-
-
-.character-card:hover .character-image{
-    transform:scale(1.05);
-    filter:brightness(1.1);
-}
-
-
-.character-name{
-    color:#e5a100;
-    margin:12px 12px 5px 12px;
-    font-size:1.2rem;
-
-    transition:0.3s;
-}
-
-
-.character-card:hover .character-name{
-    color:#ffcc33;
-    text-shadow:0 0 8px rgba(255,204,51,0.8);
-}
-
-.character-description{
-    margin:10px 12px 15px 12px;
-    font-size:0.92rem;
-    color:#ddd;
-    text-align:justify;
-}
-
-
+/* GLOW BORDER */
 .character-card::before{
     content:"";
     position:absolute;
     inset:0;
-    border-radius:16px;
+    border-radius:18px;
     padding:1px;
 
     background:linear-gradient(
         135deg,
-        rgba(255,170,0,0.5),
+        rgba(157,123,255,0.7),
         transparent,
-        rgba(255,80,80,0.4)
+        rgba(80,150,255,0.5)
     );
 
     -webkit-mask:
@@ -147,9 +128,67 @@ body{
     transition:0.3s;
 }
 
-
+/* SHOW BORDER ON HOVER */
 .character-card:hover::before{
     opacity:1;
+}
+
+/* CHARACTER IMAGE */
+.character-image{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+
+    transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+/* IMAGE HOVER EFFECT */
+.character-card:hover .character-image{
+    transform:scale(1.05);
+    filter:brightness(1.1);
+}
+
+/* CHARACTER NAME */
+.character-name{
+    color:#b79cff;
+    margin:15px 15px 5px 15px;
+    font-size:1.3rem;
+
+    transition:0.3s;
+}
+
+/* NAME HOVER */
+.character-card:hover .character-name{
+    color:#d7c6ff;
+
+    text-shadow:
+    0 0 8px rgba(215,198,255,0.9);
+}
+
+/* DESCRIPTION */
+.character-description{
+    margin:10px 15px 20px 15px;
+    font-size:0.95rem;
+    color:#ddd;
+    text-align:justify;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .title{
+        font-size:2.2rem;
+    }
+
+    .character-list-title{
+        font-size:1.6rem;
+    }
+
+    .series-info{
+        font-size:0.95rem;
+    }
 }
 
 </style>
@@ -157,70 +196,142 @@ body{
 
 <body>
 
-<h1 class="title">Jujutsu Kaisen</h1>
+<!-- TITLE -->
+<h1 class="title">⚔️ Jujutsu Kaisen</h1>
 
+<!-- DESCRIPTION -->
 <p class="series-info">
-  Jujutsu Kaisen follows Yuji Itadori, who becomes the vessel of Ryomen Sukuna
-  and enters the world of jujutsu sorcerers to fight curses.
+Jujutsu Kaisen follows Yuji Itadori, a high school student who becomes the vessel
+of the King of Curses, Ryomen Sukuna. He joins Tokyo Jujutsu High to battle dangerous curses
+and protect humanity alongside powerful sorcerers.
 </p>
 
-<h2 class="character-list-title">Character List</h2>
+<!-- SECTION TITLE -->
+<h2 class="character-list-title">Main Characters</h2>
 
+<!-- CHARACTER GRID -->
 <div class="character-list">
 
-  <div class="character-card">
-    <img class="character-image" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQpLrBm2hbxh7JFMMdVLA69izc37xcPsfIlIfgqMfW7wd5gJONpCRNQVm8mMC3hJoBKS667lnq01LcDkcC-ppyuNraJPDWEoH-sUL6_lg" alt="Yuji Itadori">
-    <h3 class="character-name">Yuji Itadori</h3>
-    <p class="character-description">Main protagonist and vessel of Sukuna.</p>
-  </div>
+    <!-- YUJI -->
+    <div class="character-card">
+        <img class="character-image"
+        src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQpLrBm2hbxh7JFMMdVLA69izc37xcPsfIlIfgqMfW7wd5gJONpCRNQVm8mMC3hJoBKS667lnq01LcDkcC-ppyuNraJPDWEoH-sUL6_lg"
+        alt="Yuji Itadori">
 
-  <div class="character-card">
-    <img class="character-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9IeH-ZunKPiej2eAAmMeBdCuosUNW0ZRW8jKYm02dy4jRhbDXCFBvAKfVwnb0lfxvMWSvl2khyi4nVoXOmJHDMU5vDQeh9KrR0Fm9Kg" alt="Nobara Kugisaki">
-    <h3 class="character-name">Nobara Kugisaki</h3>
-    <p class="character-description">A bold and confident jujutsu sorcerer.</p>
-  </div>
+        <h3 class="character-name">Yuji Itadori</h3>
 
-  <div class="character-card">
-    <img class="character-image" src="https://static1.srcdn.com/wordpress/wp-content/uploads/2021/05/Megumi-Fushiguro-Out-of-Uniform.jpg" alt="Megumi Fushiguro">
-    <h3 class="character-name">Megumi Fushiguro</h3>
-    <p class="character-description">Strategic fighter using shikigami techniques.</p>
-  </div>
+        <p class="character-description">
+        A kind-hearted teenager who becomes Sukuna’s vessel after swallowing a cursed object.
+        Yuji possesses immense physical strength and fights to save others.
+        </p>
+    </div>
 
-  <div class="character-card">
-    <img class="character-image" src="https://preview.redd.it/satoru-gojo-reference-fanart-v0-e3zaq33rfn791.jpg?width=640&crop=smart&auto=webp&s=ec370d22c5231563dcb05d37a2fc201265747428" alt="Gojo">
-    <h3 class="character-name">Satoru Gojo</h3>
-    <p class="character-description">Strongest jujutsu sorcerer alive.</p>
-  </div>
+    <!-- NOBARA -->
+    <div class="character-card">
+        <img class="character-image"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9IeH-ZunKPiej2eAAmMeBdCuosUNW0ZRW8jKYm02dy4jRhbDXCFBvAKfVwnb0lfxvMWSvl2khyi4nVoXOmJHDMU5vDQeh9KrR0Fm9Kg"
+        alt="Nobara Kugisaki">
 
-  <div class="character-card">
-    <img class="character-image" src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/06/ryomen-sukuna.jpg" alt="Sukuna">
-    <h3 class="character-name">Ryomen Sukuna</h3>
-    <p class="character-description">King of Curses.</p>
-  </div>
+        <h3 class="character-name">Nobara Kugisaki</h3>
 
-  <div class="character-card">
-    <img class="character-image" src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/08/collage-maker-09-aug-2023-09-51-pm-9.jpg" alt="Nanami">
-    <h3 class="character-name">Kento Nanami</h3>
-    <p class="character-description">Calm and disciplined sorcerer.</p>
-  </div>
+        <p class="character-description">
+        A bold and fearless jujutsu sorcerer who uses straw doll techniques and cursed nails.
+        She values confidence and individuality.
+        </p>
+    </div>
 
-  <div class="character-card">
-    <img class="character-image" src="https://static1.srcdn.com/wordpress/wp-content/uploads/2024/02/img_7624.JPG" alt="Maki Zenin">
-    <h3 class="character-name">Maki Zenin</h3>
-    <p class="character-description">Fighter with no cursed energy but extreme strength.</p>
-  </div>
+    <!-- MEGUMI -->
+    <div class="character-card">
+        <img class="character-image"
+        src="https://static1.srcdn.com/wordpress/wp-content/uploads/2021/05/Megumi-Fushiguro-Out-of-Uniform.jpg"
+        alt="Megumi Fushiguro">
 
-  <div class="character-card">
-    <img class="character-image" src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/12/jujutsu-kaisen-supporting-character-Toge-Inumaki-e1645718660964.jpg" alt="Toge Inumaki">
-    <h3 class="character-name">Toge Inumaki</h3>
-    <p class="character-description">Uses cursed speech technique.</p>
-  </div>
+        <h3 class="character-name">Megumi Fushiguro</h3>
 
-  <div class="character-card">
-    <img class="character-image" src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/05/Jujutsu-Kaisen-Panda.jpg" alt="Panda">
-    <h3 class="character-name">Panda</h3>
-    <p class="character-description">Cursed corpse with intelligence and strength.</p>
-  </div>
+        <p class="character-description">
+        A calm and strategic sorcerer who uses powerful shikigami summoned through the Ten Shadows Technique.
+        </p>
+    </div>
+
+    <!-- GOJO -->
+    <div class="character-card">
+        <img class="character-image"
+        src="https://preview.redd.it/satoru-gojo-reference-fanart-v0-e3zaq33rfn791.jpg?width=640&crop=smart&auto=webp&s=ec370d22c5231563dcb05d37a2fc201265747428"
+        alt="Satoru Gojo">
+
+        <h3 class="character-name">Satoru Gojo</h3>
+
+        <p class="character-description">
+        The strongest jujutsu sorcerer alive, known for his Limitless technique and Six Eyes ability.
+        He mentors Yuji and his classmates.
+        </p>
+    </div>
+
+    <!-- SUKUNA -->
+    <div class="character-card">
+        <img class="character-image"
+        src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/06/ryomen-sukuna.jpg"
+        alt="Ryomen Sukuna">
+
+        <h3 class="character-name">Ryomen Sukuna</h3>
+
+        <p class="character-description">
+        The terrifying King of Curses whose immense power threatens both humans and sorcerers alike.
+        </p>
+    </div>
+
+    <!-- NANAMI -->
+    <div class="character-card">
+        <img class="character-image"
+        src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/08/collage-maker-09-aug-2023-09-51-pm-9.jpg"
+        alt="Kento Nanami">
+
+        <h3 class="character-name">Kento Nanami</h3>
+
+        <p class="character-description">
+        A calm and disciplined grade-one sorcerer who approaches combat with precision and professionalism.
+        </p>
+    </div>
+
+    <!-- MAKI -->
+    <div class="character-card">
+        <img class="character-image"
+        src="https://static1.srcdn.com/wordpress/wp-content/uploads/2024/02/img_7624.JPG"
+        alt="Maki Zenin">
+
+        <h3 class="character-name">Maki Zenin</h3>
+
+        <p class="character-description">
+        Despite lacking cursed energy, Maki is an elite fighter who relies on her incredible strength
+        and weapon mastery.
+        </p>
+    </div>
+
+    <!-- TOGE -->
+    <div class="character-card">
+        <img class="character-image"
+        src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/12/jujutsu-kaisen-supporting-character-Toge-Inumaki-e1645718660964.jpg"
+        alt="Toge Inumaki">
+
+        <h3 class="character-name">Toge Inumaki</h3>
+
+        <p class="character-description">
+        A quiet sorcerer who uses cursed speech techniques capable of controlling enemies with his words.
+        </p>
+    </div>
+
+    <!-- PANDA -->
+    <div class="character-card">
+        <img class="character-image"
+        src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/05/Jujutsu-Kaisen-Panda.jpg"
+        alt="Panda">
+
+        <h3 class="character-name">Panda</h3>
+
+        <p class="character-description">
+        A highly intelligent cursed corpse with immense physical strength and multiple combat forms.
+        </p>
+    </div>
 
 </div>
 
