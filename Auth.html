@@ -24,6 +24,7 @@ body{
     color:white;
 }
 
+/* WELCOME BOX */
 .welcome{
     text-align:center;
     background:rgba(255,255,255,0.08);
@@ -32,34 +33,57 @@ body{
     border-radius:15px;
     border:1px solid rgba(255,255,255,0.2);
     box-shadow:0 10px 30px rgba(0,0,0,0.5);
-    width:350px;
+    width:380px;
 }
 
-.welcome h1{
-    color:#ff4b3e;
+/* LOGO STYLE */
+.logo{
+    font-size:42px;
     margin-bottom:10px;
 }
 
+/* TITLE STYLE */
+.welcome h1{
+    color:#ff4b3e;
+    margin-bottom:10px;
+    font-size:34px;
+    letter-spacing:1px;
+}
+
+/* TAGLINE */
+.tagline{
+    color:#ffffff;
+    font-size:16px;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+/* DESCRIPTION */
 .welcome p{
     color:#ddd;
     font-size:14px;
-    margin-bottom:20px;
+    margin-bottom:25px;
+    line-height:1.5;
 }
 
 .welcome button{
-    padding:10px 20px;
+    padding:12px 20px;
     border:none;
     background:#ff4b3e;
     color:white;
     border-radius:8px;
     cursor:pointer;
     font-weight:bold;
+    width:100%;
+    transition:0.3s;
 }
 
 .welcome button:hover{
     background:#ff2f1f;
+    transform:scale(1.02);
 }
 
+/* LOGIN BOX */
 .box{
     width:320px;
     padding:30px;
@@ -138,12 +162,30 @@ button:hover{
 
 <body>
 
+<!-- WELCOME SCREEN -->
 <div class="welcome" id="welcomeBox">
-    <h1>Welcome to Anime Nexus</h1>
-    
+
+    <!-- LOGO -->
+    <div class="logo">🎌</div>
+
+    <!-- TITLE -->
+    <h1>Anime Nexus</h1>
+
+    <!-- TAGLINE -->
+    <div class="tagline">
+        Discover Trending Anime Instantly
+    </div>
+
+    <!-- DESCRIPTION -->
+    <p>
+        Explore top-rated anime, discover new favorites,
+        and stay updated with the latest trending series.
+    </p>
+
     <button onclick="enterSite()">Enter Site</button>
 </div>
 
+<!-- LOGIN BOX -->
 <div class="box" id="loginBox">
 
     <h2 id="title">Login</h2>
