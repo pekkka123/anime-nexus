@@ -3,138 +3,116 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <title>Sakamoto Days</title>
 
 <style>
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-    }
 
-    body{
-        font-family:Arial, sans-serif;
-        background:#1f1f1f;
-        color:#f1f1f1;
-        line-height:1.6;
-        padding: 20px;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-   
-    .title{
-        text-align:center;
-        font-size:3rem;
-        color:#e5a100;
-        margin-bottom:10px;
-    }
+body{
+    font-family:Arial, sans-serif;
 
-    .series-info{
-        max-width:900px;
-        margin: 0 auto 30px auto;
-        text-align:center;
-        color:#ccc;
-    }
+    background:
+    linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)),
+    url("https://wallpapercave.com/wp/wp13777006.jpg");
 
-    .character-list-title{
-        text-align:center;
-        margin:20px 0;
-        color:#e5a100;
-    }
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
 
-    
-    .character-list{
-        max-width:1100px;
-        margin:auto;
-        display:grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap:20px;
-    }
+    color:#f1f1f1;
+    line-height:1.6;
+    padding:20px;
+}
 
-    
-<style>
 
-/* CHARACTER CARD */
+.title{
+    text-align:center;
+    font-size:3rem;
+    color:#ffb300;
+    margin-bottom:10px;
+
+    text-shadow:
+    0 0 10px rgba(255,179,0,0.7),
+    0 0 20px rgba(255,120,0,0.4);
+}
+
+
+.series-info{
+    max-width:900px;
+    margin:0 auto 35px auto;
+    text-align:center;
+    color:#ddd;
+    font-size:1rem;
+}
+
+
+.character-list-title{
+    text-align:center;
+    margin:30px 0;
+    color:#ffb300;
+    font-size:2rem;
+
+    text-shadow:0 0 10px rgba(255,179,0,0.5);
+}
+
+
+.character-list{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:25px;
+}
+
 .character-card{
-    background:#2a2a2a;
-    border-radius:16px;
+    background:rgba(42,42,42,0.92);
+
+    border-radius:18px;
     overflow:hidden;
 
-    /* IMPROVED SHADOW */
     box-shadow:
-    0 6px 15px rgba(0,0,0,0.4),
-    0 0 10px rgba(229,161,0,0.1);
+    0 6px 15px rgba(0,0,0,0.5),
+    0 0 10px rgba(255,179,0,0.15);
 
     transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 
     position:relative;
+
+    backdrop-filter:blur(5px);
 }
 
-/* HOVER EFFECT */
 .character-card:hover{
     transform:translateY(-10px) scale(1.02);
 
     box-shadow:
-    0 12px 25px rgba(0,0,0,0.6),
-    0 0 20px rgba(229,161,0,0.5);
+    0 12px 30px rgba(0,0,0,0.7),
+    0 0 20px rgba(255,179,0,0.5);
 
     cursor:pointer;
 }
 
-/* IMAGE EFFECT */
-.character-image{
-    width:100%;
-    height:250px;
-    object-fit:cover;
 
-    transition:
-    transform 0.4s ease,
-    filter 0.4s ease;
-}
-
-/* IMAGE HOVER ZOOM */
-.character-card:hover .character-image{
-    transform:scale(1.05);
-    filter:brightness(1.1);
-}
-
-/* NAME */
-.character-name{
-    color:#e5a100;
-    margin:12px 12px 5px 12px;
-    font-size:1.2rem;
-
-    transition:0.3s;
-}
-
-/* NAME GLOW EFFECT */
-.character-card:hover .character-name{
-    color:#ffcc33;
-    text-shadow:0 0 8px rgba(255,204,51,0.8);
-}
-
-/* DESCRIPTION */
-.character-description{
-    margin:10px 12px 15px 12px;
-    font-size:0.92rem;
-    color:#ddd;
-    text-align:justify;
-}
-
-/* OPTIONAL ANIME BORDER GLOW */
 .character-card::before{
     content:"";
     position:absolute;
     inset:0;
-    border-radius:16px;
+    border-radius:18px;
     padding:1px;
 
     background:linear-gradient(
         135deg,
-        rgba(255,170,0,0.5),
+        rgba(255,179,0,0.7),
         transparent,
-        rgba(255,80,80,0.4)
+        rgba(255,80,80,0.5)
     );
 
     -webkit-mask:
@@ -148,9 +126,66 @@
     transition:0.3s;
 }
 
-/* SHOW BORDER ON HOVER */
+
 .character-card:hover::before{
     opacity:1;
+}
+
+
+.character-image{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+
+    transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+
+.character-card:hover .character-image{
+    transform:scale(1.05);
+    filter:brightness(1.1);
+}
+
+.character-name{
+    color:#ffcc4d;
+    margin:15px 15px 5px 15px;
+    font-size:1.3rem;
+
+    transition:0.3s;
+}
+
+
+.character-card:hover .character-name{
+    color:#ffe082;
+
+    text-shadow:
+    0 0 8px rgba(255,224,130,0.9);
+}
+
+
+.character-description{
+    margin:10px 15px 20px 15px;
+    font-size:0.95rem;
+    color:#ddd;
+    text-align:justify;
+}
+
+
+@media(max-width:768px){
+
+    .title{
+        font-size:2.2rem;
+    }
+
+    .character-list-title{
+        font-size:1.6rem;
+    }
+
+    .series-info{
+        font-size:0.95rem;
+    }
 }
 
 </style>
@@ -158,47 +193,91 @@
 
 <body>
 
-<h1 class="title">Sakamoto Days</h1>
+
+<h1 class="title">🛒 Sakamoto Days</h1>
+
 
 <p class="series-info">
-  Taro Sakamoto is the main protagonist of the series Sakamoto Days.
-  Previously the best assassin in the world and a former member of the Order,
-  he now runs a convenience store with his wife Aoi and daughter Hana.
+Sakamoto Days follows Taro Sakamoto, a legendary retired assassin who gave up his dangerous life
+to live peacefully with his family while managing a convenience store. However, his past continues
+to catch up with him as enemies and assassins appear.
 </p>
 
-<h2 class="character-list-title">Character List</h2>
+
+<h2 class="character-list-title">Main Characters</h2>
+
 
 <div class="character-list">
 
-  <div class="character-card">
-    <img src="https://images6.alphacoders.com/138/1388238.png" alt="Taro Sakamoto">
-    <h3>Taro Sakamoto</h3>
-    <p>Legendary ex-hitman who now lives peacefully running a convenience store with his family.</p>
-  </div>
+   
+    <div class="character-card">
+        <img class="character-image"
+        src="https://images6.alphacoders.com/138/1388238.png"
+        alt="Taro Sakamoto">
 
-  <div class="character-card">
-    <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2025/01/lu-shaotang-sakamoto-days.jpg" alt="Lu Xiaotong">
-    <h3>Lu Xiaotong</h3>
-    <p>Daughter of a Triad family who now works at Sakamoto’s store and helps the team.</p>
-  </div>
+        <h3 class="character-name">Taro Sakamoto</h3>
 
-  <div class="character-card">
-    <img src="https://i.pinimg.com/originals/e4/fb/bf/e4fbbf197bb186850ee74614c5d79905.jpg" alt="Shin Asakura">
-    <h3>Shin Asakura</h3>
-    <p>Telepathic former hitman who now supports Sakamoto’s family in their daily life.</p>
-  </div>
+        <p class="character-description">
+        A legendary former hitman feared by the underworld. He now lives peacefully
+        with his family while protecting them from threats from his past.
+        </p>
+    </div>
 
-  <div class="character-card">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Ux25iGELDJEYeFfKp3fT-caFG9cRGJrT7Q&s" alt="Aoi Sakamoto">
-    <h3>Aoi Sakamoto</h3>
-    <p>Sakamoto’s wife whose kindness helped him leave the assassin world behind.</p>
-  </div>
+ 
+    <div class="character-card">
+        <img class="character-image"
+        src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2025/01/lu-shaotang-sakamoto-days.jpg"
+        alt="Lu Xiaotong">
 
-  <div class="character-card">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAsouS7YxzgZiACTuWpCK1dKJMreUcI69QyA&s" alt="Hana Sakamoto">
-    <h3>Hana Sakamoto</h3>
-    <p>Their daughter who brings joy and warmth into the Sakamoto family’s life.</p>
-  </div>
+        <h3 class="character-name">Lu Xiaotong</h3>
+
+        <p class="character-description">
+        Daughter of a powerful Triad family who joins Sakamoto’s convenience store
+        and becomes part of the growing team.
+        </p>
+    </div>
+
+
+    <div class="character-card">
+        <img class="character-image"
+        src="https://i.pinimg.com/originals/e4/fb/bf/e4fbbf197bb186850ee74614c5d79905.jpg"
+        alt="Shin Asakura">
+
+        <h3 class="character-name">Shin Asakura</h3>
+
+        <p class="character-description">
+        A telepathic former assassin who deeply respects Sakamoto and assists him
+        in protecting their peaceful life.
+        </p>
+    </div>
+
+
+    <div class="character-card">
+        <img class="character-image"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Ux25iGELDJEYeFfKp3fT-caFG9cRGJrT7Q&s"
+        alt="Aoi Sakamoto">
+
+        <h3 class="character-name">Aoi Sakamoto</h3>
+
+        <p class="character-description">
+        Sakamoto’s loving wife whose kindness and support inspired him to leave behind
+        the dangerous assassin lifestyle.
+        </p>
+    </div>
+
+
+    <div class="character-card">
+        <img class="character-image"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAsouS7YxzgZiACTuWpCK1dKJMreUcI69QyA&s"
+        alt="Hana Sakamoto">
+
+        <h3 class="character-name">Hana Sakamoto</h3>
+
+        <p class="character-description">
+        The cheerful daughter of the Sakamoto family who brings warmth and happiness
+        into their everyday lives.
+        </p>
+    </div>
 
 </div>
 
